@@ -108,7 +108,7 @@ type alias Config a msg
 
 {-| Get the translated text from a Translation type
 
-    import GTranslate exposing (Translation, translatedText)
+    import GTranslate.Free exposing (Translation, translatedText)
 
     Translation "how are you doing?" "¿como estas?" "es" "en" 0.98
         |> translatedText 
@@ -122,7 +122,7 @@ translatedText =
 
 {-| Get the original text from a Translation type
 
-    import GTranslate exposing (Translation, originalText)
+    import GTranslate.Free exposing (Translation, originalText)
 
     Translation "how are you doing?" "¿como estas?" "es" "en" 0.98
         |> originalText 
@@ -136,7 +136,7 @@ originalText =
 
 {-| Get the source language from a Translation type
 
-    import GTranslate exposing (Translation, sourceLanguage)
+    import GTranslate.Free exposing (Translation, sourceLanguage)
 
     Translation "how are you doing?" "¿como estas?" "es" "en" 0.98
         |> sourceLanguage 
@@ -150,7 +150,7 @@ sourceLanguage =
 
 {-| Get the target language from this Translation type
 
-    import GTranslate exposing (Translation, targetLanguage)
+    import GTranslate.Free exposing (Translation, targetLanguage)
 
     Translation "how are you doing?" "¿como estas?" "es" "en" 0.98
         |> targetLanguage 
@@ -169,7 +169,7 @@ targetLanguage =
 --     translated spanish to english, then no confidence will be given because 
 --     google did not have to guess the source language. 
     
---     import GTranslate exposing (Translation, confidence)
+--     import GTranslate.Free exposing (Translation, confidence)
 
 --     Translation "how are you doing?" "¿como estas?" "es" "en" 0.98
 --         |> confidence 
@@ -184,7 +184,7 @@ targetLanguage =
 
 {-| Get the id of this Translation if it exists. The id is optional and must be a string
     
-    import GTranslate exposing (Translation, id)
+    import GTranslate.Free exposing (Translation, id)
 
     Translation "1" "how are you doing?" "¿como estas?" "es" "en" 0.98 "sample-1"
         |> id 
@@ -269,7 +269,7 @@ configUID =
     For a comprehensive list of supported languages, go [here.](https://cloud.google.com/translate/docs/languages)
 
     import Http
-    import GTranslate exposing (Translation, translate)
+    import GTranslate.Free exposing (Translation, translate)
 
     -- MESSAGE
     type Msg 
@@ -316,7 +316,7 @@ translate =
     For a comprehensive list of supported languages, go [here.](https://cloud.google.com/translate/docs/languages)
 
     import Http
-    import GTranslate exposing (Translation, toEnglish)
+    import GTranslate.Free exposing (Translation, toEnglish)
 
     -- MESSAGE
     type Msg 
@@ -356,7 +356,7 @@ toEnglish =
     For a comprehensive list of supported languages, go [here.](https://cloud.google.com/translate/docs/languages)
 
     import Http
-    import GTranslate exposing (Translation, toTargetLang)
+    import GTranslate.Free exposing (Translation, toTargetLang)
 
     -- MESSAGE
     type Msg 
@@ -402,7 +402,7 @@ toTargetLang =
 
     
     import Http
-    import GTranslate exposing (..)
+    import GTranslate.Free exposing (..)
 
 
     -- Models
