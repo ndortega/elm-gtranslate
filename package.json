@@ -1,0 +1,48 @@
+{
+    "author": "Nathan Ortega",
+    "name": "elm-gtranslate",
+    "version": "1.0.0",
+    "description": "A free & type-safe way to interact with the Google Translation api",
+    "main": "index.js",
+    "scripts": {
+        "test": "elm-verify-examples && elm-test",
+        "start": "npm run dev",
+        "dev": "webpack-dev-server --hot --port 3000 --colors",
+        "build": "webpack",
+        "prod": "webpack -p",
+        "postinstall": "elm-package install -y && elm-test init"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ndortega/elm-gtranslate.git"
+    },
+    "license": "BSD3",
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.4",
+        "babel-preset-env": "^1.6.1",
+        "bootstrap-loader": "^2.2.0",
+        "clean-webpack-plugin": "^0.1.19",
+        "copy-webpack-plugin": "^4.5.1",
+        "css-loader": "^0.28.11",
+        "elm-hot-loader": "^0.5.4",
+        "elm-verify-examples": "^2.3.1",
+        "elm-webpack-loader": "^4.5.0",
+        "extract-text-webpack-plugin": "^3.0.2",
+        "file-loader": "^1.1.11",
+        "html-webpack-plugin": "^3.1.0",
+        "node-sass": "^4.9.2",
+        "resolve-url-loader": "^2.3.0",
+        "sass-loader": "^6.0.7",
+        "style-loader": "^0.20.3",
+        "url-loader": "^1.0.1",
+        "webpack": "^4.2.0",
+        "webpack-cli": "^2.0.13",
+        "webpack-dev-server": "^3.1.1",
+        "webpack-merge": "^4.1.2"
+    },
+    "dependencies": {
+        "bootstrap": "4.0.0",
+        "loglevel": "^1.6.1"
+    }
+}
