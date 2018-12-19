@@ -4,6 +4,9 @@ build/
 # elm-package generated files
 elm-stuff
 
+# generated documentation
+docs.json
+
 # elm-repl generated files
 repl-temp-*
 

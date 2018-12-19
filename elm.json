@@ -1,30 +1,26 @@
 {
-    "type": "application",
+    "type": "package",
+    "name":"ndortega/gtranslate",
+    "version": "1.0.1",
+    "summary": "A free & type-safe way to interact with the Google Translation API",
+    "repository": "https://github.com/ndortega/elm-gtranslate.git",
+    "license": "BSD-3-Clause",
     "source-directories": [
         "src",
         "src/GTranslate"
     ],
-    "elm-version": "0.19.0",
+    "exposed-modules": ["GTranslate.Free" ],
+    "elm-version": "0.19.0 <= v < 0.20.0",
     "dependencies": {
-        "direct": {
-            "elm/browser": "1.0.0",
-            "elm/core": "1.0.0",
-            "elm/html": "1.0.0",
-            "elm/http": "1.0.0",
-            "elm/json": "1.1.2"
-        },
-        "indirect": {
-            "elm/time": "1.0.0",
-            "elm/url": "1.0.0",
-            "elm/virtual-dom": "1.0.0"
-        }
+        "elm/browser": "1.0.0 <= v < 2.0.0",
+        "elm/core": "1.0.0 <= v < 2.0.0",
+        "elm/html": "1.0.0 <= v < 2.0.0",
+        "elm/http": "1.0.0 <= v < 2.0.0",
+        "elm/json": "1.1.2 <= v < 2.0.0",
+        "elm/virtual-dom": "1.0.0 <= v < 2.0.0"
     },
     "test-dependencies": {
-        "direct": {
-            "elm-explorations/test": "1.0.0"
-        },
-        "indirect": {
-            "elm/random": "1.0.0"
-        }
+        "elm-explorations/test": "1.0.0 <= v < 2.0.0",
+        "elm/random": "1.0.0 <= v < 2.0.0"
     }
 }
