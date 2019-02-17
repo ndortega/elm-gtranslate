@@ -1,7 +1,5 @@
 module LiveTranslation exposing (..)
 
-
-
 import Debug exposing (toString, log)
 import Browser
 import Html.Events exposing( onInput )
@@ -10,7 +8,6 @@ import Html exposing (Html, text, div, h1, h3, img, br, button, input, b)
 import Html.Attributes exposing (src)
 
 import Maybe
-
 import GTranslate.Free exposing (..)
 
 
@@ -46,7 +43,7 @@ update msg model =
             ({ model | translated =  Just translation }, Cmd.none)
 
         Response (Err message) -> 
-            let _ = log "err" message in 
+            let _ = log "Error:" message in 
             (model, Cmd.none)
 
 
@@ -59,7 +56,7 @@ view model =
         , div []
             [ input [ onInput Translate ] []
             ]
-        
+        , br [] []
         , div [] 
             [ br [] []
             , b [] [ text 
@@ -69,8 +66,6 @@ view model =
                         )
                     ]
             ]
-    
-
         ]
 
 

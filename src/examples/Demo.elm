@@ -1,7 +1,7 @@
 module Demo exposing (..)
 
 
-import Debug exposing (toString)
+import Debug exposing (toString, log)
 import Browser
 import Html.Events exposing( onClick )
 import Http
@@ -63,7 +63,6 @@ update message model =
 
                 -- Apply the already completed translatations to our list of phrases
                 newPhrases = model.phrases |> apply customConfig updateStrategy model.translations 
-
             in
 
             -- update our model 
@@ -80,6 +79,7 @@ update message model =
 
         Response (Err msg) ->  
             -- handle error here
+            let _ = log "Error:" msg in 
             (model, Cmd.none)
 
 
@@ -104,15 +104,13 @@ view model =
                 )
             ]
     
+        , br [] []
+
         , div [   ]
             [ div [] 
                 (
                     model.translations 
-                        |> List.map (\t -> (   h3[][ text (translatedText t)]
-                                        -- div []
-                                        --     ( (translatedText t) |> List.map(\ sentence ->  h3[][ text sentence] ) )
-                                    )
-                        )
+                        |> List.map ( \t -> (h3[][ text (translatedText t)]) )
                 )
             ]
         ]
