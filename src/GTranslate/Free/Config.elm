@@ -5,8 +5,7 @@ module GTranslate.Free.Config exposing
     , CRecord, getGenerator, getMessage, getSourceLang, getTargetLang, sourceOrAuto, unwrap, withUID
     )
 
-{-| Free & type-safe google translate api.
-
+{-|
 
 # Opaque Types
 

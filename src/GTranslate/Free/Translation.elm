@@ -1,9 +1,9 @@
 module GTranslate.Free.Translation exposing (TRecord, Translation(..), changeID, confidence, decodeIndex, id, originalText, sentenceDecoder, sourceLanguage, targetLanguage, translatedText, translationDecoder, updateRecord)
 
+
 import Array exposing (Array, get)
 import Json.Decode exposing (..)
 import Maybe exposing (withDefault)
-import Debug exposing (toString)
 
 {-| This is the type that is decoded from the JSON from the google translate api. This type
 contains useful information like: translation, original text, source language,
@@ -15,8 +15,6 @@ type Translation
 
 
 -- This record is an internal type used by this package
-
-
 type alias TRecord =
     { translation : String
     , originalText : String
@@ -168,6 +166,11 @@ decodeIndex index decoder arr =
             Nothing
 
 
+
+{-| Given a nested array which represents each sentence in the original text, attempt to decode
+    each Value in the array to a string and generate a record containing the original text and the 
+    translated result.
+-}
 sentenceDecoder : Array (Array Value) -> List { original : String, translated : String }
 sentenceDecoder sentences =
     sentences
@@ -193,9 +196,11 @@ sentenceDecoder sentences =
 
 
 
--- Given just an array, decode certain values at specific points into a Translation type
+-- 
 
 
+{-| Given just an array, decode certain values at specific points into a Translation record
+-}
 translationDecoder : Maybe String -> String -> Decoder Translation
 translationDecoder identifier targetLang =
     array value
@@ -231,8 +236,8 @@ translationDecoder identifier targetLang =
                         succeed (Translation (TRecord translated original sourceLang targetLang conf identifier))
 
                     ( Nothing, _ ) ->
-                        fail ("Missing translation object: " ++ toString decodedNestedArray)
+                        fail ("Missing translation object: ")
 
                     ( _, Nothing ) ->
-                        fail ("Missing Language: " ++ toString decodedLanguage)
+                        fail ("Missing Language: ")
             )

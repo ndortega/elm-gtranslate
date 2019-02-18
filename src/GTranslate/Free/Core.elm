@@ -1,6 +1,6 @@
 module GTranslate.Free.Core exposing (apply, batchRecords, batchStrings, find, toEnglish, toTargetLang, translate, zipMap)
 
-import Debug exposing (toString)
+import String exposing (fromInt)
 import GTranslate.Free.Config exposing (..)
 import GTranslate.Free.Translation exposing (..)
 import Http
@@ -129,7 +129,7 @@ batchStrings config lines =
                         --- default to using the index as the id
                         |> List.indexedMap
                             (\index item ->
-                                item |> translate (Just (toString index)) config
+                                item |> translate (Just (fromInt index)) config
                             )
     in
     Cmd.batch commands
@@ -153,7 +153,7 @@ batchRecords config accessor objects =
                                 Just (func item)
 
                             Nothing ->
-                                Just (toString index)
+                                Just (fromInt index)
                 in
                 translate identifier config (accessor item)
             )
