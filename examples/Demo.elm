@@ -1,10 +1,9 @@
 module Demo exposing (..)
 
-
-import Debug exposing (toString, log)
-import Browser
-import Html.Events exposing( onClick )
 import Http
+import Browser
+import Debug exposing (toString, log)
+import Html.Events exposing( onClick )
 import Html exposing (Html, text, div, h1, h3, img, br, button)
 import Html.Attributes exposing (src)
 
